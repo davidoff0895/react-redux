@@ -1,23 +1,36 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
-    "noImplicitAny": false,
-    "module": "commonjs",
-    "target": "es6",
     "lib": [
-      "es2015",
-      "es2017",
+      "es6",
       "dom"
     ],
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "module": "esnext",
+    "target": "es2017",
     "removeComments": true,
-    "allowSyntheticDefaultImports": false,
+    "experimentalDecorators": true,
+    "strict": true,
+    "isolatedModules": false,
+    "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "allowJs": true,
+    "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@/": [
+      "@/*": [
         "src/*"
       ]
     }
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ]
 }

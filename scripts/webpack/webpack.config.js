@@ -1,5 +1,6 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = [
   {
@@ -14,10 +15,10 @@ module.exports = [
     module: {
       rules: [
         {
-          test: /\.tsx?$/,
+          test: /\.(j|t)s(x)?$/,
           use: 'ts-loader',
-          exclude: /node_modules/
-        }
+          exclude: /node_modules/,
+        },
       ]
     },
     resolve: {
@@ -25,7 +26,14 @@ module.exports = [
         'node_modules',
         path.resolve('./src'),
       ],
-      extensions: [ '.tsx', '.ts', '.js' ]
+      extensions: [ '.tsx', '.ts', '.js' ],
+      plugins: [
+        new TsconfigPathsPlugin({
+          configFile: './tsconfig.json',
+          extensions: ['.ts', '.tsx', '.js'],
+          baseUrl: '.'
+        })
+      ],
     },
     plugins: [
       new htmlWebpackPlugin({
