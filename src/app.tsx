@@ -1,12 +1,6 @@
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
 import {
-  BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
 } from 'react-router-dom'
 import {CustomersList} from '@/components/customers-list'
 
