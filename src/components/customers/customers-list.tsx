@@ -1,10 +1,11 @@
 import * as React from 'react'
-import {ICustomer} from '@/types/customer.types'
+import {ICustomer} from '@/store/customers/customers.types'
 import {Paper, Grid, Avatar, Typography, Box} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
 
 export interface CustomersListProps {
-  customers: ICustomer[]
+  customers: ICustomer[],
+  getCustomers: any
 }
 
 const useStyles = makeStyles(theme => ({
@@ -24,7 +25,8 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export function CustomersList({customers}: CustomersListProps) {
+export function CustomersList({customers, getCustomers}: CustomersListProps) {
+  getCustomers()
   const classes = useStyles()
 
   const customersList = customers.map((customer) => <Paper className={classes.paper} key={customer.id}>

@@ -1,5 +1,5 @@
 {
-  "name": "react-redux",
+  "name": "react-redux-app",
   "version": "1.0.0",
   "description": "React + redux + saga/thunk + route practice",
   "main": "index.js",
@@ -32,14 +32,18 @@
   "dependencies": {
     "@material-ui/core": "^4.9.1",
     "@material-ui/icons": "^4.9.1",
+    "@types/react-redux": "^7.1.7",
     "@types/react-router-dom": "^5.1.3",
     "@types/webpack": "^4.41.4",
     "@types/webpack-env": "^1.15.1",
+    "@zxcabs/vuex-promise-action-name-helper": "^1.0.0",
     "axios": "^0.19.2",
     "path": "^0.12.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "tslint": "^6.0.0"
   }
