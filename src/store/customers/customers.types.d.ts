@@ -1,8 +1,11 @@
-export const GET_CUSTOMERS = 'GET_CUSTOMERS'
+export const GET_CUSTOMERS_INITIAL = 'GET_CUSTOMERS_INITIAL'
+export const GET_CUSTOMERS_SUCCEED = 'GET_CUSTOMERS_SUCCEED'
+export const GET_CUSTOMERS_FAILED = 'GET_CUSTOMERS_FAILED'
 
 interface IGetCustomersAction {
-  type: typeof GET_CUSTOMERS
-  customers: ICustomer[]
+  type: string
+  customers: ICustomer[],
+  error: string
 }
 type IAppActonTypes = IGetCustomersAction
 
@@ -15,6 +18,8 @@ interface ICustomer {
 }
 interface IAppState {
   customersList: ICustomer[]
+  customersPending: boolean
+  customersError?: string
 }
 interface IMapState {
   customers: IAppState

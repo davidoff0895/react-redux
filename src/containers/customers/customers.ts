@@ -1,6 +1,6 @@
-import { connect, ConnectedProps } from 'react-redux'
-import { CustomersList } from '@/components/customers/customers-list'
-import { IMapState } from '@/store/customers/customers.types'
+import {connect} from 'react-redux'
+import CustomersList from '@/components/customers/customers-list'
+import {IMapState} from '@/store/customers/customers.types'
 import http from '@/api/createHttp'
 import createCustomerApi from '@/api/customers/customers'
 
@@ -11,15 +11,19 @@ const mapState = (state: IMapState) => ({
 })
 
 const mapDispatch = {
-  getCustomers: () => ({type: 'GET_CUSTOMERS', customers: [
-      {
-        id: '1',
-        firstName: 'john',
-        lastName: 'doe',
-        imgUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
-        position: 'Programmer'
-      }
-    ]})
+  getCustomers: () => {
+    return {
+      type: 'GET_CUSTOMERS_SUCCEED', customers: [
+        {
+          id: '1',
+          firstName: 'john',
+          lastName: 'doe',
+          imgUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
+          position: 'Programmer'
+        }
+      ]
+    }
+  }
 }
 
 const connector = connect(

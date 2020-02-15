@@ -1,13 +1,15 @@
-import {IAppState, IAppActonTypes, GET_CUSTOMERS, ICustomersApi} from './customers.types'
+import {
+  IAppState,
+  IAppActonTypes,
+  GET_CUSTOMERS_INITIAL,
+  GET_CUSTOMERS_SUCCEED,
+  GET_CUSTOMERS_FAILED,
+} from './customers.types'
 
 const initialState: IAppState = {
-  customersList: [{
-    id: '1',
-    firstName: 'john',
-    lastName: 'doe',
-    imgUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
-    position: 'Programmer'
-  }]
+  customersList: [],
+  customersPending: false,
+  customersError: null
 }
 
 export function customersReducers(
@@ -15,8 +17,17 @@ export function customersReducers(
   action: IAppActonTypes
 ): IAppState {
   switch (action.type) {
-    case 'GET_CUSTOMERS':
-      console.log('GET_CUSTOMERS')
+    case 'GET_CUSTOMERS_SUCCEED':
+      return {
+        customersList: action.customers,
+        customersPending: false
+      }
+    case 'GET_CUSTOMERS_ERROR':
+      return {
+        customersList: state.customersList,
+        customersPending: false,
+        customersError: action.error
+      }
     default:
       return state
   }
