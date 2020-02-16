@@ -4,8 +4,8 @@ export const GET_CUSTOMERS_FAILED = 'GET_CUSTOMERS_FAILED'
 
 interface IGetCustomersAction {
   type: string
-  customers: ICustomer[],
-  error: string
+  customers?: ICustomer[],
+  error?: string
 }
 type IAppActonTypes = IGetCustomersAction
 

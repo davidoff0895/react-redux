@@ -1,4 +1,8 @@
-import axios, {AxiosPromise} from 'axios'
+import axios, {
+  AxiosPromise,
+  AxiosResponse,
+  AxiosError,
+} from 'axios'
 
 const http = axios.create({
   baseURL: 'http://www.mocky.io/',
@@ -12,6 +16,10 @@ const http = axios.create({
     }
   }
 })
+
+const resFn = (response: AxiosResponse) => response
+const rejFn = (error: AxiosError) => Promise.reject(error.response)
+http.interceptors.response.use(resFn, rejFn)
 
 export default class Http {
   public static get(url: string, data: any): AxiosPromise {

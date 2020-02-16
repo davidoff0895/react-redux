@@ -15,6 +15,26 @@ module.exports = [
     module: {
       rules: [
         {
+          test: /\.css$/,
+          use: [
+            'css-loader'
+          ],
+        },
+        {
+          test: /\.scss$/,
+          use: [
+            'css-loader',
+            'sass-loader'
+          ],
+        },
+        {
+          test: /\.sass$/,
+          use: [
+            'css-loader',
+            'sass-loader'
+          ],
+        },
+        {
           test: /\.(j|t)s(x)?$/,
           use: 'ts-loader',
           exclude: /node_modules/,

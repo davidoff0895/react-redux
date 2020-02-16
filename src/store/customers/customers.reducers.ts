@@ -17,12 +17,17 @@ export function customersReducers(
   action: IAppActonTypes
 ): IAppState {
   switch (action.type) {
+    case 'GET_CUSTOMERS_INITIAL':
+      return {
+        customersList: [],
+        customersPending: true
+      }
     case 'GET_CUSTOMERS_SUCCEED':
       return {
         customersList: action.customers,
         customersPending: false
       }
-    case 'GET_CUSTOMERS_ERROR':
+    case 'GET_CUSTOMERS_FAILED':
       return {
         customersList: state.customersList,
         customersPending: false,

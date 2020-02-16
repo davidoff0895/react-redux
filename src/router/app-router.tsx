@@ -4,7 +4,6 @@ import {
 } from 'react-router-dom'
 import RouterView from '@/router/router-view'
 
-
 export default function AppRouter() {
   return (
     <Router>
