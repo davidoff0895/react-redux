@@ -9,7 +9,7 @@ import Customers from '@/containers/customers/customers'
 
 const routes: RouteProps[] = [
   {
-    path: '/customers',
+    path: '/',
     component: Customers,
   }
 ]
