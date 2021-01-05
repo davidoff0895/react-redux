@@ -38,7 +38,7 @@
     "@types/webpack": "^4.41.4",
     "@types/webpack-env": "^1.15.1",
     "@zxcabs/vuex-promise-action-name-helper": "^1.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "css-loader": "^3.4.2",
     "node-sass": "^4.13.1",
     "path": "^0.12.7",
